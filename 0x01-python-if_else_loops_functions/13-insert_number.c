@@ -1,4 +1,4 @@
-#inclide "lists.h"
+#include "lists.h"
 
 /**
  * inset_node - a function that inserts a number into
