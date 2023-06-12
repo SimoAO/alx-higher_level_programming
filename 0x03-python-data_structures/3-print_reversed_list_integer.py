@@ -4,5 +4,3 @@ def print_reversed_list_integer(my_list=[]):
         rev = reversed(my_list)
         for i in rev:
             print("{}".format(i))
-    else:
-        return None
