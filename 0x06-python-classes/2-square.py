@@ -1,10 +1,13 @@
 #!/usr/bin/python3
-"""the square module"""
+"""The square module"""
 class Square:
-    """defines a square"""
+    """Defines a square
+    Attributes:
+    attr1 (size): size of the square
+    """
     def __init__(self, size=0):
         """
-        args:
+        Args:
         size: length of a side
         """
         if not isinstance(size, int):
