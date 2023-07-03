@@ -59,7 +59,7 @@ class Rectangle:
         """Returns the rectangle with # character"""
         if self.__height == 0 or self.__width == 0:
             return ("")
-        return (("#" * self.__width + "\n") * self.__height)[:-1]
+        return ((str(self.print_symbol) * self.__width + "\n") * self.__height)[:-1]
 
     def __repr__(self):
         """Returns a rperesentation of the rectangle"""
