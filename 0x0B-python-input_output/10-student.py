@@ -12,12 +12,11 @@ class Student:
 
     def to_json(self, attrs=None):
         """retrieves a dictionary representation of a Student"""
-        if (type(attrs) is list and
-        all(type(i) == str for i in attrs)):
+        if attrs is None:
+            return self.__dict__
+        else:
             dic = {}
             for j in attrs:
                 if j in self.__dict__:
                     dic[j] = self.__dict__[j]
             return dic
-        else:
-        return self.__dict__
