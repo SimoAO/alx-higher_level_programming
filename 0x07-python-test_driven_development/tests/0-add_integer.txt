@@ -1,0 +1,43 @@
+This module defines an 2 integer addition
+Import the module
+>>> add_integer = __import__("0-add_integer").add_integer
+
+>>> add_integer(1, 2)
+3
+>>> add_integer(100, -2)
+98
+>>> add_integer(2)
+100
+>>> add_integer(100.3, -2)
+98
+>>> add_integer(3, -2)
+1
+>>> add_integer(-3, -5)
+-8
+
+The function also works with the floating values.
+
+>>> add_integer(14.3, 4.1)
+18
+
+Non Numbers
+
+>>> add_integer("Hello", 5)
+Traceback (most recent call last):
+TypeError: a must be an integer
+
+>>> add_integer(3,"Hello")
+Traceback (most recent call last):
+TypeError: b must be an integer
+
+>>> add_integer(None)
+Traceback (most recent call last):
+TypeError: a must be an integer
+
+>>> add_integer(float('nan'))
+Traceback (most recent call last):
+TypeError: a must be an integer
+
+>>> add_integer(98, float('nan'))
+Traceback (most recent call last):
+TypeError: b must be an integer
