@@ -6,7 +6,8 @@ max_integer = __import__('6-max_integer').max_integer
 
 
 class TestMaxInteger(unittest.TestCase):
-    
+    """Defines a unitests for max_integers"""
+
     """This function tests for ordered list"""
     def test_ordered_list(self):
         self.assertEqual(max_integer([1, 2, 3, 4]), 4)
@@ -40,10 +41,9 @@ class TestMaxInteger(unittest.TestCase):
         with self.assertRaises(TypeError):
             max_integer(None)
 
-    """This function tests for True"""
-    def test_True(self):
-        with self.assertRaises(TypeError):
-            max_integer(True)
+    """This function tests for an empty string"""
+    def test_empty_string(self):
+        self.assertEqual(max_integer(""), None)
 
 if __name__ == '__main__':
     unittest.main()
