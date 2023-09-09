@@ -1,6 +1,5 @@
 #!/usr/bin/python3
-"""
-This module defines the sum of 2 integers
+"""This module defines the sum of 2 integers.
 """
 
 
