@@ -14,6 +14,6 @@ def pascal_triangle(n):
         r = [1]
         if i > 0:
             for j in range(i):
-                row.append(sum(pl[-1][j:j+2]))
+                r.append(sum(pl[-1][j:j+2]))
         pl.append(r)
     return pl
