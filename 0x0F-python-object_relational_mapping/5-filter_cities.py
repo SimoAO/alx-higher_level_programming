@@ -16,11 +16,11 @@ if __name__ == "__main__":
     dbcur = db.cursor()
 
     dbcur.execute("SELECT cities.name FROM cities INNER JOIN states \
-            ON cities.state_id = states.id WHERE states.name LIKE \
-            BINARY %s ORDER BY cities.id ASC", (argv[4], ))
+            ON cities.state_id = states.id WHERE states.name \
+            LIKE BINARY %s ORDER BY cities.id ASC", (argv[4], ))
 
     for city in (dbcur.fetchall()):
-        print(", ".join(city[0]))
+        print(", ".join(city[1]))
 
     dbcur.close()
     db.close()
