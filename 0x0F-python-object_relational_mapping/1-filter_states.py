@@ -14,7 +14,7 @@ if __name__ == "__main__":
 
     dbcur = db.cursor()
 
-    dbcur.execute("SELECT * FROM states  WHERE name LIKE BINARY /
+    dbcur.execute("SELECT * FROM states WHERE name LIKE BINARY /
             'N%' ORDER BY id ASC")
 
     for state in (dbcur.fetchall()):
