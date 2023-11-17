@@ -15,7 +15,7 @@ if __name__ == "__main__":
     dbcur = db.cursor()
 
     dbcur.execute("SELECT * FROM states INNER JOIN cities ON \
-            states.id = cities.state_id  ORDER BY id ASC")
+            states.id = cities.state_id  ORDER BY cities.id ASC")
 
     for state in (dbcur.fetchall()):
         print(state)
