@@ -20,7 +20,7 @@ if __name__ == "__main__":
             LIKE BINARY %s ORDER BY cities.id ASC", (sys.argv[4], ))
 
     for city in (dbcur.fetchall()):
-        print(", ".city[0])
+        print(city[0])
 
     dbcur.close()
     db.close()
