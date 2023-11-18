@@ -21,7 +21,7 @@ if __name__ == "__main__":
             ORDER BY cities.id ASC", (sys.argv[4], ))
 
     for city in (dbcur.fetchall()):
-        print(city[1])
+        print(", ".join(city[1]))
 
     dbcur.close()
     db.close()
