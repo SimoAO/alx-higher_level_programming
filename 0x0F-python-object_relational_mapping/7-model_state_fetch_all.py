@@ -3,7 +3,7 @@
 A module that lists all State objects from the database
 """
 
-from model_state import State, Base
+from model_state import Base, State
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 import sys
