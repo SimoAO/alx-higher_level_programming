@@ -1,5 +1,8 @@
 #!/usr/bin/python3
-"""A module that prints the first State object from the database"""
+"""
+A module that prints the State object with the name passed as
+argument from the database
+"""
 
 from model_state import Base, State
 from sqlalchemy import create_engine
@@ -17,8 +20,7 @@ if __name__ == "__main__":
     session = Session()
 
     pstate = session.query(State).\
-            filter(State.name.like(sys.argv[4])).first().\
-            order_by(State.id)
+            filter(State.name.like(sys.argv[4])).first()
     if pstate:
         print("{}".format(pstate.id))
     else:
