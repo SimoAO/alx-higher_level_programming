@@ -1,5 +1,8 @@
 #!/usr/bin/python3
-"""A module that prints the first State object from the database"""
+"""
+A module that lists all State objects that contain the letter a
+from the database
+"""
 
 from model_state import Base, State
 from sqlalchemy import create_engine
@@ -16,10 +19,9 @@ if __name__ == "__main__":
     Session = sessionmaker(bind=engine)
     session = Session()
 
-    fstate = session.query(State).order_by(State.id).first()
-    if fstate:
-        print("{}: {}".format(fstate.id, fstate.name))
-    else:
-        print("Nothing")
+    astate = session.query(State).filter(State.name.like('%a%')).\
+            order_by(State.id)
+    for state in astate:
+        print("{}: {}".format(state.id, state.name))
 
     session.close()
