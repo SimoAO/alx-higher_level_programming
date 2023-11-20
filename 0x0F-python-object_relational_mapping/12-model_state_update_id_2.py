@@ -20,4 +20,3 @@ if __name__ == "__main__":
     chname = session.query(State).filter_by(id == "2").first()
     chname.name = 'New Mexico'
     session.commit()
-    session.close()
