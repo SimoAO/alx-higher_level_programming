@@ -14,6 +14,6 @@ if __name__ == "__main__":
     Session = sessionmaker(bind=engine)
     session = Session()
     addci = session.query(City, State).join(State)
-    for city, state in addci:
+    for city, state in addci.all():
         print("{}: ({}) {}".format(state.name, city.id, city.name))
     session.close()
