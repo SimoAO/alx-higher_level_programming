@@ -17,5 +17,5 @@ if __name__ == "__main__":
             print("No result")
         else:
             print("[{}] {}".format(reqj.get("id"), reqj.get("name")))
-    except:
+    except ValueError:
         print("Not a valid JSON")
