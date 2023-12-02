@@ -12,10 +12,10 @@ if __name__ == "__main__":
         q = ""
     req = requests.post(url, data={"q": q})
     try:
-        reqjs = req.json()
-        if len(reqjs) == 0:
+        reqj = req.json()
+        if len(reqj) == 0:
             print("No result")
         else:
-            print("[{}] {}".format(reqjs.get("id"), reqjs.get("name")))
+            print("[{}] {}".format(reqj.get("id"), reqj.get("name")))
     except:
         print("Not a valid JSON")
