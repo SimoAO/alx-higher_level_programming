@@ -1,25 +1,24 @@
 #!/usr/bin/node
-const process = require('process');
 const request = require('request');
-const requestURL = String(process.argv[2]);
-let amount = 0;
+const rURL = process.argv[2];
+let count = 0;
 const id = 18;
 
-request(requestURL, function (error, response, body) {
-  if (error) {
-    console.log(error);
+request(rURL, function (err, resp, body) {
+  if (err) {
+    console.log(err);
   } else {
-    const jsonBodyFilms = JSON.parse(body).results;
-    const numberFilms = JSON.parse(body).count;
-    for (let index = 0; index < numberFilms; index++) {
-      const linkList = jsonBodyFilms[index].characters;
-      for (let indexJ = 0; indexJ < linkList.length; indexJ++) {
-        if (linkList[indexJ].includes(String(id))) {
-          amount = amount + 1;
+    const jbr = JSON.parse(body).results;
+    const nf = JSON.parse(body).count;
+    for (let i = 0; i < nf; i++) {
+      const ll = jbr[i].characters;
+      for (let j = 0; j < ll.length; j++) {
+        if (ll[j].includes(id)) {
+          count += 1;
           break;
         }
       }
     }
-    console.log(amount);
+    console.log(count);
   }
 });
