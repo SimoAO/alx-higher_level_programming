@@ -6,10 +6,12 @@ request(rURL, function (err, resp, body) {
   if (err) {
     console.log(err);
   } else {
+    const todos = JSON.parse(body);
     const users = {};
-    body.forEach((ToDo) => {
+
+    todos.forEach((ToDo) => {
       if (ToDo.completed) {
-        if (users[ToDo.userId] === true) {
+        if (users[ToDo.userId]) {
           users[ToDo.userId] += 1;
         } else {
           users[ToDo.userId] = 1;
