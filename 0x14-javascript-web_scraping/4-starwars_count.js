@@ -13,7 +13,8 @@ request(rURL, function (err, resp, body) {
     for (let i = 0; i < nf; i++) {
       const ll = jbr[i].characters;
       for (let j = 0; j < ll.length; j++) {
-        if (ll[j].includes(id)) {
+        const chId = parseInt(ll[j].split('/').slice(-2, -1)[0]);
+        if (chId === id) {
           count += 1;
           break;
         }
